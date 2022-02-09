@@ -2,6 +2,7 @@ import {
   CheckLedgerEntry,
   RippleStateLedgerEntry,
   OfferLedgerEntry,
+  TicketLedgerEntry,
   SignerListLedgerEntry,
   EscrowLedgerEntry,
   PayChannelLedgerEntry,
@@ -10,15 +11,15 @@ import {
 
 export interface GetAccountObjectsOptions {
   type?:
-    | string
-    | (
-        | 'check'
-        | 'escrow'
-        | 'offer'
-        | 'payment_channel'
-        | 'signer_list'
-        | 'state'
-      )
+  | string
+  | (
+    | 'check'
+    | 'escrow'
+    | 'offer'
+    | 'payment_channel'
+    | 'signer_list'
+    | 'state'
+  )
   ledgerHash?: string
   ledgerIndex?: number | ('validated' | 'closed' | 'current')
   limit?: number
@@ -30,15 +31,15 @@ export interface AccountObjectsRequest {
 
   // (Optional) Filter results to include only this type of ledger object.
   type?:
-    | string
-    | (
-        | 'check'
-        | 'escrow'
-        | 'offer'
-        | 'payment_channel'
-        | 'signer_list'
-        | 'state'
-      )
+  | string
+  | (
+    | 'check'
+    | 'escrow'
+    | 'offer'
+    | 'payment_channel'
+    | 'signer_list'
+    | 'state'
+  )
 
   // (Optional) A 20-byte hex string for the ledger version to use.
   ledger_hash?: string
@@ -61,6 +62,7 @@ export interface AccountObjectsResponse {
     | CheckLedgerEntry
     | RippleStateLedgerEntry
     | OfferLedgerEntry
+    | TicketLedgerEntry
     | SignerListLedgerEntry
     | EscrowLedgerEntry
     | PayChannelLedgerEntry

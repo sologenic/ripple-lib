@@ -1,12 +1,12 @@
 import * as _ from 'lodash'
 import * as assert from 'assert'
-import {constants} from '../../common'
+import { constants } from '../../common'
 const AccountFlags = constants.AccountFlags
 import parseFields from './fields'
 
 function getAccountRootModifiedNode(tx: any) {
   const modifiedNodes = tx.meta.AffectedNodes.filter(
-    (node) => node.ModifiedNode.LedgerEntryType === 'AccountRoot'
+    (node) => node.ModifiedNode?.LedgerEntryType === 'AccountRoot'
   )
   assert.ok(modifiedNodes.length === 1)
   return modifiedNodes[0].ModifiedNode
@@ -55,8 +55,8 @@ function parseSettings(tx: any) {
   const txType = tx.TransactionType
   assert.ok(
     txType === 'AccountSet' ||
-      txType === 'SetRegularKey' ||
-      txType === 'SignerListSet'
+    txType === 'SetRegularKey' ||
+    txType === 'SignerListSet'
   )
 
   return Object.assign({}, parseFlags(tx), parseFields(tx))

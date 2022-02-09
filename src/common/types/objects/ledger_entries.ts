@@ -1,5 +1,5 @@
-import {SignerEntry} from './index'
-import {Amount, RippledAmount} from './amounts'
+import { SignerEntry } from './index'
+import { Amount, RippledAmount } from './amounts'
 
 export interface AccountRootLedgerEntry {
   LedgerEntryType: 'AccountRoot'
@@ -125,6 +125,10 @@ export interface OfferLedgerEntry {
   PreviousTxnID: string
   PreviousTxnLgrSeq: number
   Expiration?: number
+}
+
+export interface TicketLedgerEntry {
+  LedgerEntryType: 'Ticket'
 }
 
 export interface PayChannelLedgerEntry {
