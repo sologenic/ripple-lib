@@ -48,7 +48,7 @@
     "doctoc": "^2.0.0",
     "ejs": "^3.0.1",
     "eslint": "^6.5.1",
-    "eventemitter2": "^6.0.0",
+    "eventemitter2": "^6.4.6",
     "https-browserify": "^1.0.0",
     "json-schema-to-markdown-table": "^0.4.0",
     "mocha": "^9",
